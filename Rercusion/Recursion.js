@@ -1,4 +1,9 @@
 // Recursion works by invoking the same function with a different input until you reach your base case.
+// Reverse a string
+function reverse(str) {
+  if (str.length <= 1) return str;
+  return reverse(str.slice(1)) + str[0];
+}
 
 function countDown(num) {
   if (num <= 0) {
