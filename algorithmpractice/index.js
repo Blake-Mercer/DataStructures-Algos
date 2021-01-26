@@ -101,37 +101,23 @@ const findDups = (arr) => {
   }
   return dups;
 };
-// Multiple Tenary Operations syntax
 
-// const yourVar = condition1
-//   ? someValue
-//   : condition2
-//   ? anotherValue
-//   : defaultValue;
+// Twosum
+const twoSum = function (nums, target) {
+  let map = new Map();
+  let result = [];
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i];
+    let compliment = target - num;
 
-// function example() {
-//   return condition1
-//     ? value1
-//     : condition2
-//     ? value2
-//     : condition3
-//     ? value3
-//     : value4;
-// }
-
-// Equivalent to:
-
-// function example() {
-//   if (condition1) {
-//     return value1;
-//   } else if (condition2) {
-//     return value2;
-//   } else if (condition3) {
-//     return value3;
-//   } else {
-//     return value4;
-//   }
-// }
+    if (map.has(compliment)) {
+      result[0] = map.get(compliment);
+      result[1] = i;
+      return result;
+    }
+    map.set(num, i);
+  }
+};
 
 const fizzBuzz = () => {
   for (let i = 0; i <= 100; i++) {

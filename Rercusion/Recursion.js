@@ -6,11 +6,7 @@ function reverse(str) {
 }
 
 function countDown(num) {
-  if (num <= 0) {
-    console.log('all down');
-    return;
-  }
-  console.log(num);
+  if (num <= 0) return;
   num--;
   countDown(num);
 }
