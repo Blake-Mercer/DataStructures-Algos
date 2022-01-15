@@ -257,3 +257,22 @@ const removeDuplicates = (nums) => {
   }
   return p1 + 1;
 };
+
+function compressedString(str) {
+  if (str.length === 0) return;
+  let output = '';
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    count++;
+    if (str[i] !== str[i + 1]) {
+      if (count > 1) {
+        output += str[i] + count;
+        count = 0;
+      } else {
+        output += str[i];
+        count = 0;
+      }
+    }
+  }
+  return output;
+}
