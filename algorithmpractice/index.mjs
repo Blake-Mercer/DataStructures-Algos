@@ -30,5 +30,6 @@ export class SubsetSum extends EventEmitter {
   }
 }
 
-const run = new SubsetSum(5, [1, 2, 3])
+const run = new SubsetSum(5, [1, 2, 3, 4, 5])
+run.on('match', () => console.log('match'))
 run.start()
